@@ -1,1 +1,58 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>La Libération de la France — 1944–1945</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="css/liberation.css"></head><body><header class="hero"><p>HISTOIRE — 1944 · 1945</p><h1>La Libération de la France</h1><p>Une campagne militaire à parcourir sur une carte vivante.</p><button id="animateBtn">▶ ANIMER LA LIBÉRATION</button></header><main><section class="map-shell"><div id="map"></div><div class="map-overlay"><div id="animDate"></div><h2 id="animTitle"></h2><p id="animText"></p></div><div class="legend">🔵 Débarquement　🔴 Bataille　🟢 Résistance　🟠 Atlantique</div></section><section class="timeline-panel"><div><b>Chronologie de la Libération</b> <span id="timelineStatus">Lecture arrêtée</span></div><input id="timeline" type="range" min="0" max="1000" value="0"><div class="timeline-labels"><span>6 juin 1944</span><span>8 mai 1945</span></div></section><section class="events"><h2>Les grandes étapes</h2><div id="eventList"></div></section></main><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="js/battles.js"></script><script src="js/map.js"></script><script src="js/liberation-animation.js"></script></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Carte interactive de la Libération de la France — 1944 à 1945. Parcourez la chronologie des débarquements, batailles et libérations.">
+  <title>La Libération de la France — 1944–1945</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/liberation.css">
+</head>
+<body>
+  <header class="hero">
+    <p>HISTOIRE — 1944 · 1945</p>
+    <h1>La Libération de la France</h1>
+    <p>Une campagne militaire à parcourir sur une carte vivante.</p>
+    <button id="animateBtn" type="button" aria-label="Lancer l'animation de la Libération">▶ ANIMER LA LIBÉRATION</button>
+  </header>
+
+  <main>
+    <section class="map-shell" aria-label="Carte interactive de la Libération">
+      <div id="map" role="application" aria-label="Carte de France avec les événements de la Libération"></div>
+      <div class="map-overlay" aria-live="polite">
+        <div id="animDate"></div>
+        <h2 id="animTitle"></h2>
+        <p id="animText"></p>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><i style="background:#2878d0"></i> Débarquement</span>
+        <span><i style="background:#c43b35"></i> Bataille</span>
+        <span><i style="background:#3c9b62"></i> Résistance</span>
+        <span><i style="background:#d27b22"></i> Poche Atlantique</span>
+      </div>
+    </section>
+
+    <section class="timeline-panel">
+      <div class="timeline-head">
+        <b>Chronologie de la Libération</b>
+        <span id="timelineStatus">Lecture arrêtée</span>
+      </div>
+      <input id="timeline" type="range" min="0" max="1000" value="0" step="1" aria-label="Curseur de chronologie de juin 1944 à mai 1945">
+      <div class="timeline-labels">
+        <span>6 juin 1944</span>
+        <span>8 mai 1945</span>
+      </div>
+    </section>
+
+    <section class="events">
+      <h2>Les grandes étapes</h2>
+      <div id="eventList" role="list"></div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/battles.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/liberation-animation.js"></script>
+</body>
+</html>
